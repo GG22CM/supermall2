@@ -1,28 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+	 	<keep-alive exclude="Detail">
+			<router-view />
+		</keep-alive>
+		<tabbar/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Tabbar from "components/content/tabbar/Tabbar";
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+  	Tabbar
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+@import 'assets/css/base.css';
+
+.divC {
+	display: flex;
+	flex-wrap: wrap;
 }
+
+.divC>div {
+	flex-basis: 50%;
+	background-color: red;
+}
+
+
 </style>
